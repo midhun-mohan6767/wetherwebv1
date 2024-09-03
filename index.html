@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wether</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div  class="main">
+            <div id="result_left" class="first">
+                <!-- <div class="f">
+                    <h1><b>WEATHER</b></h1>
+                    <h2>temp</h2>
+                    <p>feellike</p>
+                    <h2>place</h2>
+                </div> -->
+            </div>
+            <div id="result_right" class="second">
+<!-- <input style="width: 100px;" type="text" placeholder="country" >
+<button>search</button>
+<h1 style="color: aliceblue;">weather Details</h1>
+<p>in</p>
+<p>us</p>
+<p>humidity</p>
+<p>30%</p>
+<p>wind</p>
+<p>1.04kmph</p>
+<p>pressure</p>
+<p>1o11</p> -->
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    const weather_display=async()=>{
+const responce= await fetch("https://api.openweathermap.org/data/2.5/weather?q=kakkanad&appid=8ac5c4d57ba6a4b3dfcf622700447b1e&units=metric",{
+    method:"GET"
+})
+console.log(responce);
+
+ const server_responce=await responce.json()
+ console.log(server_responce);
+ result_left.innerHTML =`
+ 
+                 <div class="f">
+                    <h1><b>WEATHER</b></h1>
+                    <h2>${server_responce.main.temp}</h2>
+                    <p>feellike ${server_responce.main.feels_like}</p>
+                    <h2>${server_responce.name}</h2>
+                </div>`
+                result_right.innerHTML =`
+
+<div class="s">
+        <input style="width: 100px;" type="text" placeholder="country" >
+        <button>search</button>
+        <h1 style="color: aliceblue;">weather Details</h1>
+        <p>${server_responce.sys.country}</p>
+        <p>us</p>
+        <p>HUMIDITY</p>
+        <p>${server_responce.main.humidity}</p>
+        <p>wind</p>
+        <p>${server_responce.wind.speed}</p>
+        <p>pressure</p>
+        <p>${server_responce.main.pressure}</p>
+    
+</div> 
+ 
+ `
+ 
+    }
+    weather_display()
+</script>
+</html>
+
+
+
+
+<!-- <div  class="second">
+<div class="s">
+        <input style="width: 100px;" type="text" placeholder="country" >
+        <button>search</button>
+        <h1 style="color: aliceblue;">weather Details</h1>
+        <p>${server_responce.sys.country}</p>
+        <p>us</p>
+        <p>HUMIDITY</p>
+        <p>${server_responce.main.humidity}</p>
+        <p>wind</p>
+        <p>${server_responce.wind.speed}</p>
+        <p>pressure</p>
+        <p>${server_responce.main.pressure}</p>
+    
+</div>                </div>
+     -->
+     
+    

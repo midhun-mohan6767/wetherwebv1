@@ -1,0 +1,60 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(118, 167, 150);
+    position: fixed;
+}
+.main{
+    display: flex;
+    width: 80%;
+    height: 80vh;
+    margin: 10vh 10%;
+}
+.main{
+    background-color:rgb(245, 237, 237);
+}
+.first{
+    width: 80%;
+    height: 80vh;
+    background-image: url(./file-20210401-13-z6rl6z.avif);
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    align-content: center;
+    color: rgb(20, 21, 21);
+    font-size: xx-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+}
+.second{
+    align-items: center;
+    text-align: center;
+    text-align: justify;
+    background-color: gray;
+    height: 80vh;
+    width: 20%;
+    font-size:x-large;
+
+}
+.second>p{
+    display: inline;
+    font-size: larger;
+    padding: 7px;
+    font-size: x-large;
+}
+
+button{
+    background-color: rgb(61, 87, 35);
+    color: aliceblue;
+    cursor: pointer;
+
+}
+button:hover{
+    background-color: brown;
+}
